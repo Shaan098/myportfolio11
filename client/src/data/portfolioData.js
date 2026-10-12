@@ -129,8 +129,8 @@ export const projectsData = [
 ];
 
 export const stats = [
-  { label: 'Projects', value: '3', icon: '🚀' },
-  { label: 'LeetCode Problems', value: '175+', icon: '📊' },
-  { label: 'Certifications', value: '2', icon: '🏆' },
-  { label: 'LeetCode Acceptance', value: '77.78%', icon: '📈' },
+  { label: 'Projects', value: '3' },
+  { label: 'LeetCode Problems', value: '175+' },
+  { label: 'Certifications', value: '2' },
+  { label: 'LeetCode Acceptance', value: '77.78%' },
 ];

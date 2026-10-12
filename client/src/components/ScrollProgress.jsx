@@ -18,7 +18,7 @@ export default function ScrollProgress() {
 
   return (
     <motion.div
-      className="fixed top-0 left-0 h-1 bg-gradient-to-r from-accent via-cyan-400 to-accent z-50"
+      className="fixed top-0 left-0 h-1 bg-[#D94F2B] z-50"
       style={{ width: `${scrollProgress}%` }}
       transition={{ duration: 0.3 }}
     />

@@ -2,7 +2,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import { useState, useEffect } from 'react';
 import Loader from './components/Loader';
-import CustomCursor from './components/CustomCursor';
 import ScrollProgress from './components/ScrollProgress';
 import Home from './pages/Home';
 
@@ -24,7 +23,6 @@ function App() {
 
   return (
     <Router>
-      <CustomCursor />
       <ScrollProgress />
       <Toaster position="top-right" />
       <Routes>

@@ -19,7 +19,7 @@ export default function SkillBar({ skill, proficiency = 85 }) {
 
       <div className="w-full h-2 bg-secondary/50 rounded-full overflow-hidden border border-accent/20">
         <motion.div
-          className="h-full bg-gradient-to-r from-accent to-cyan-400"
+          className="h-full bg-[#D94F2B]"
           initial={{ width: 0 }}
           animate={isInView ? { width: `${proficiency}%` } : { width: 0 }}
           transition={{ duration: 1, delay: 0.2, ease: 'easeOut' }}

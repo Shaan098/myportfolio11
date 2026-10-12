@@ -4,13 +4,13 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary:  '#080B14',
-        accent:   '#00F5FF',
-        secondary:'#1A2F4B',
+        primary:  '#F4EBDD',
+        accent:   '#D94F2B',
+        secondary:'#F2C14E',
       },
       fontFamily: {
-        syne:  ['Syne', 'sans-serif'],
-        dm:    ['DM Sans', 'sans-serif'],
+        syne:  ['Bodoni Moda', 'serif'],
+        dm:    ['Space Grotesk', 'sans-serif'],
       },
       animation: {
         'spin-slow': 'spin 12s linear infinite',
