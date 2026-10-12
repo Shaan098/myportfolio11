@@ -1,10 +1,9 @@
 import { motion } from 'framer-motion';
 import { fadeUp, staggerContainer } from '../animations/variants';
 import { skills } from '../data/portfolioData';
-import SkillBar from './SkillBar';
 
 export default function Skills() {
-  const categories = ['frontend', 'backend', 'devops', 'tools'];
+  const categories = ['languages', 'frameworks', 'tools', 'soft skills'];
 
   return (
     <motion.section
@@ -29,10 +28,10 @@ export default function Skills() {
         {categories.map((category) => (
           <motion.div key={category} className="mb-12" variants={fadeUp}>
             <h3 className="text-2xl font-syne font-bold text-accent mb-6 capitalize">
-              {category === 'devops' ? 'DevOps' : category}
+              {category}
             </h3>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="flex flex-wrap gap-4">
               {skills
                 .filter((skill) => skill.category === category)
                 .map((skill) => (
@@ -42,13 +41,9 @@ export default function Skills() {
                     whileHover={{ scale: 1.02 }}
                     variants={fadeUp}
                   >
-                    <div className="p-4 bg-secondary/30 rounded-lg border border-accent/20 hover:border-accent/50 transition">
-                      <div className="flex items-center gap-3 mb-4">
-                        <span className="text-3xl">{skill.icon}</span>
-                        <div className="flex-1">
-                          <SkillBar skill={skill.name} proficiency={skill.level} />
-                        </div>
-                      </div>
+                    <div className="flex items-center gap-3 px-4 py-3 bg-secondary/30 rounded-lg border border-accent/20 hover:border-accent/50 transition">
+                      <span className="w-10 h-10 flex items-center justify-center rounded-full bg-accent/10 text-accent text-xs font-bold">{skill.icon}</span>
+                      <span className="text-gray-200 font-dm">{skill.name}</span>
                     </div>
                   </motion.div>
                 ))}

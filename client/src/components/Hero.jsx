@@ -8,7 +8,7 @@ import ResumeButtons from './ResumeButtons';
 
 export default function Hero() {
   const textRef = useRef(null);
-  const roles = ['Full Stack Developer', 'MERN Stack Expert', 'Cloud Architect', 'Problem Solver', 'Open Source Contributor'];
+  const roles = ['Full Stack Developer', 'React.js Developer', 'Backend Developer', 'Problem Solver'];
   const [currentRole, setCurrentRole] = useState(0);
 
   useEffect(() => {
@@ -74,8 +74,8 @@ export default function Hero() {
           className="text-gray-400 max-w-2xl mx-auto mb-8 text-lg leading-relaxed font-dm"
           variants={fadeUp}
         >
-          Building stunning, performant web experiences with the MERN stack. 
-          Passionate about clean code, great design, and solving real-world problems.
+          Computer Science student and full-stack developer building reliable web applications
+          with React, Node.js, Django, and MongoDB.
         </motion.p>
 
         {/* Resume Buttons */}

@@ -12,11 +12,11 @@ export default function Home() {
   return (
     <>
       <Helmet>
-        <title>Your Name | Full Stack Developer Portfolio</title>
-        <meta name="description" content="Full Stack Developer specializing in MERN stack. Building stunning web experiences." />
+        <title>Shaan Saurav | Full Stack Developer</title>
+        <meta name="description" content="Shaan Saurav is a Computer Science student and full-stack developer building reliable web applications." />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Your Name | Full Stack Developer" />
-        <meta property="og:description" content="Portfolio showcasing MERN stack projects and expertise" />
+        <meta property="og:title" content="Shaan Saurav | Full Stack Developer" />
+        <meta property="og:description" content="Portfolio showcasing Shaan Saurav's full-stack projects, skills, certificates, and achievements." />
         <meta name="theme-color" content="#080B14" />
       </Helmet>
 

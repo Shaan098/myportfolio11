@@ -18,7 +18,7 @@ export default function Footer() {
             viewport={{ once: true }}
           >
             <h3 className="text-2xl font-syne font-bold text-accent mb-2">Shaan Saurav</h3>
-            <p className="text-gray-400 font-dm">Full Stack Developer | MERN Stack</p>
+            <p className="text-gray-400 font-dm">Full Stack Developer | Computer Science Student</p>
           </motion.div>
 
           {/* Quick Links */}
@@ -76,7 +76,7 @@ export default function Footer() {
         {/* Bottom */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-gray-500 text-sm font-dm text-center md:text-left">
-            © {new Date().getFullYear()} Shaan Saurav. Built with ❤️ using MERN Stack.
+            © {new Date().getFullYear()} Shaan Saurav. Built with React and modern web technologies.
           </p>
 
           <motion.button

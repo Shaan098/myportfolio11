@@ -1,8 +1,6 @@
-import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { fadeUp, staggerContainer } from '../animations/variants';
-import { stats } from '../data/portfolioData';
-import AnimatedCounter from './AnimatedCounter';
+import { fadeUp, staggerContainer, scaleUp } from '../animations/variants';
+import { achievements, certificates, stats } from '../data/portfolioData';
 
 export default function About() {
   return (
@@ -15,7 +13,6 @@ export default function About() {
       viewport={{ once: true }}
     >
       <div className="max-w-7xl mx-auto">
-        {/* Section Title */}
         <motion.div className="text-center mb-16" variants={fadeUp}>
           <h2 className="text-4xl md:text-5xl font-syne font-bold mb-4">
             <span className="text-white">About </span>
@@ -25,84 +22,62 @@ export default function About() {
         </motion.div>
 
         <div className="grid md:grid-cols-1 gap-12 items-center">
-          {/* Visual Element */}
-          <motion.div 
-            className="flex justify-center mb-8"
-            variants={fadeUp}
-          >
+          <motion.div className="flex justify-center mb-8" variants={fadeUp}>
             <motion.div className="relative w-full max-w-2xl h-64 rounded-lg overflow-hidden">
-              {/* Gradient Background */}
               <div className="absolute inset-0 bg-gradient-to-br from-accent/20 via-secondary/50 to-accent/10" />
-              
-              {/* Decorative Elements */}
-              <motion.div
-                className="absolute top-4 right-8 text-6xl"
-                animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}
-                transition={{ duration: 4, repeat: Infinity }}
-              >
-                💻
-              </motion.div>
-              
-              <motion.div
-                className="absolute top-20 left-8 text-5xl"
-                animate={{ y: [0, 20, 0], rotate: [0, -5, 0] }}
-                transition={{ duration: 5, repeat: Infinity }}
-              >
-                🚀
-              </motion.div>
-              
-              <motion.div
-                className="absolute bottom-8 right-16 text-5xl"
-                animate={{ y: [0, -15, 0] }}
-                transition={{ duration: 3.5, repeat: Infinity }}
-              >
-                ⚡
-              </motion.div>
-              
-              <motion.div
-                className="absolute bottom-12 left-12 text-6xl"
-                animate={{ rotate: [0, 360] }}
-                transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-              >
-                ⚛️
-              </motion.div>
-
-              {/* Center Text */}
+              <motion.div className="absolute top-4 right-8 text-6xl" animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }} transition={{ duration: 4, repeat: Infinity }}>💻</motion.div>
+              <motion.div className="absolute top-20 left-8 text-5xl" animate={{ y: [0, 20, 0], rotate: [0, -5, 0] }} transition={{ duration: 5, repeat: Infinity }}>🚀</motion.div>
+              <motion.div className="absolute bottom-8 right-16 text-5xl" animate={{ y: [0, -15, 0] }} transition={{ duration: 3.5, repeat: Infinity }}>⚡</motion.div>
+              <motion.div className="absolute bottom-12 left-12 text-6xl" animate={{ rotate: [0, 360] }} transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}>⚛️</motion.div>
               <div className="absolute inset-0 flex items-center justify-center">
-                <motion.div
-                  className="text-center"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.6 }}
-                >
+                <div className="text-center">
                   <p className="text-accent text-lg font-syne font-bold">Full Stack Developer</p>
-                  <p className="text-gray-300 text-sm font-dm mt-2">MERN Stack Specialist</p>
-                </motion.div>
+                  <p className="text-gray-300 text-sm font-dm mt-2">Computer Science Student</p>
+                </div>
               </div>
             </motion.div>
           </motion.div>
 
-          {/* Bio Content */}
           <motion.div variants={fadeUp}>
             <p className="text-gray-300 text-lg leading-relaxed mb-6 font-dm">
-              I&apos;m a full-stack developer and Computer Science student at Lovely Professional 
-              University, passionate about building scalable web applications with the MERN stack. 
-              I specialize in React, Node.js, Express, and MongoDB, with additional expertise in 
-              C++ and AWS cloud architecture.
+              I&apos;m a Computer Science and Engineering student at Lovely Professional University
+              and a full-stack developer who enjoys building reliable, user-focused web applications.
+              My experience spans React, Node.js, Express.js, Django, MongoDB, and REST APIs.
             </p>
             <p className="text-gray-300 text-lg leading-relaxed mb-8 font-dm">
-              Currently pursuing challenging projects in AR/VR, real-time systems, and cloud 
-              infrastructure. I&apos;ve earned certifications from NPTEL (Cloud Computing) and Oracle 
-              (AWS Developer Professional). Active on LeetCode with 150+ problems solved and 
-              consistent GitHub contributions.
+              My projects include a real-time collaborative editor, a sprint and bug tracker, and an
+              online judge platform. I also enjoy problem-solving, collaborative work, and learning
+              new technologies.
             </p>
 
-            {/* Stats */}
             <div className="grid grid-cols-2 gap-4">
-              <AnimatedCounter to={10} duration={2} label="Projects Completed" icon="🚀" />
-              <AnimatedCounter to={150} duration={2.5} label="LeetCode Problems" icon="📊" />
-              <AnimatedCounter to={2} duration={1.5} label="Certifications" icon="🏆" />
-              <AnimatedCounter to={500} duration={2.5} label="GitHub Contributions" icon="📈" />
+              {stats.map((stat) => (
+                <motion.div key={stat.label} className="p-4 bg-secondary/50 rounded-lg border border-accent/20" variants={scaleUp}>
+                  <div className="text-3xl mb-2">{stat.icon}</div>
+                  <div className="text-accent text-2xl font-syne font-bold">{stat.value}</div>
+                  <div className="text-gray-400 text-sm font-dm">{stat.label}</div>
+                </motion.div>
+              ))}
+            </div>
+
+            <div className="mt-10 grid md:grid-cols-2 gap-8">
+              <div>
+                <h3 className="text-2xl font-syne font-bold text-accent mb-4">Certificates</h3>
+                <div className="space-y-4">
+                  {certificates.map((certificate) => (
+                    <div key={certificate.title} className="border-l-2 border-accent pl-4">
+                      <p className="text-white font-dm">{certificate.title}</p>
+                      <p className="text-gray-400 text-sm font-dm">{certificate.issuer} · {certificate.date}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <h3 className="text-2xl font-syne font-bold text-accent mb-4">Achievements</h3>
+                <ul className="space-y-3 text-gray-300 text-sm font-dm list-disc list-inside">
+                  {achievements.map((achievement) => <li key={achievement}>{achievement}</li>)}
+                </ul>
+              </div>
             </div>
           </motion.div>
         </div>

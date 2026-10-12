@@ -69,7 +69,7 @@ export default function Contact() {
             {[
               { icon: FaEnvelope, label: 'Email', value: 'shaansaurav633@gmail.com', href: 'mailto:shaansaurav633@gmail.com' },
               { icon: FaPhone, label: 'Phone', value: '+91 6204566381', href: 'tel:+916204566381' },
-              { icon: FaMapMarkerAlt, label: 'Location', value: 'Phagwara, Punjab' },
+              { icon: FaMapMarkerAlt, label: 'Location', value: 'Punjab, India' },
             ].map((contact, index) => {
               const Icon = contact.icon;
               return (

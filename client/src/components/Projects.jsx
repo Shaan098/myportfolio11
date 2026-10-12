@@ -1,34 +1,14 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { fadeUp, staggerContainer, scaleUp } from '../animations/variants';
 import { projectsData } from '../data/portfolioData';
-import { getProjects } from '../utils/api';
 import ProjectCard from './ProjectCard';
 import ProjectModal from './ProjectModal';
 
 export default function Projects() {
   const [projects, setProjects] = useState(projectsData);
   const [selectedCategory, setSelectedCategory] = useState('all');
-  const [loading, setLoading] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
-
-  useEffect(() => {
-    fetchProjects();
-  }, []);
-
-  const fetchProjects = async () => {
-    try {
-      setLoading(true);
-      const response = await getProjects('all');
-      if (response.data.success) {
-        setProjects(response.data.data);
-      }
-    } catch (error) {
-      console.log('Using fallback project data');
-    } finally {
-      setLoading(false);
-    }
-  };
 
   const categories = ['all', 'frontend', 'backend', 'fullstack', 'mobile'];
 

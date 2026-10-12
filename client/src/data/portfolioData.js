@@ -1,105 +1,136 @@
-// Static portfolio data - fallback if API fails
+// Portfolio content is kept in one place so it stays aligned with the CV.
 
 export const skills = [
-  { name: 'React.js',      icon: '⚛',  level: 90, category: 'frontend' },
-  { name: 'JavaScript',    icon: '⭐', level: 90, category: 'frontend' },
-  { name: 'HTML & CSS',    icon: '🎨', level: 88, category: 'frontend' },
-  { name: 'Bootstrap',     icon: '🎯', level: 85, category: 'frontend' },
-  { name: 'Node.js',       icon: '🟩', level: 88, category: 'backend'  },
-  { name: 'Express.js',    icon: '🚂', level: 85, category: 'backend'  },
-  { name: 'MongoDB',       icon: '🍃', level: 85, category: 'backend'  },
-  { name: 'C++',           icon: '📘', level: 80, category: 'languages' },
-  { name: 'Git & GitHub',  icon: '🐙', level: 88, category: 'tools'    },
-  { name: 'AWS',           icon: '☁',  level: 82, category: 'devops'   },
-  { name: 'JWT',           icon: '🔐', level: 85, category: 'backend'  },
-  { name: 'MySQL',         icon: '🗄',  level: 80, category: 'tools'    },
+  { name: 'C++', icon: 'C++', category: 'languages' },
+  { name: 'JavaScript', icon: 'JS', category: 'languages' },
+  { name: 'C', icon: 'C', category: 'languages' },
+  { name: 'PHP', icon: 'PHP', category: 'languages' },
+  { name: 'Python', icon: 'PY', category: 'languages' },
+  { name: 'HTML & CSS', icon: '</>', category: 'frameworks' },
+  { name: 'Bootstrap', icon: 'B', category: 'frameworks' },
+  { name: 'Node.js', icon: 'N', category: 'frameworks' },
+  { name: 'Express.js', icon: 'E', category: 'frameworks' },
+  { name: 'React.js', icon: 'R', category: 'frameworks' },
+  { name: 'Django', icon: 'D', category: 'frameworks' },
+  { name: 'Laravel', icon: 'L', category: 'frameworks' },
+  { name: 'MySQL', icon: 'SQL', category: 'tools' },
+  { name: 'MongoDB', icon: 'DB', category: 'tools' },
+  { name: 'VS Code', icon: 'VS', category: 'tools' },
+  { name: 'Thunder Client', icon: 'TC', category: 'tools' },
+  { name: 'MS Office', icon: 'MS', category: 'tools' },
+  { name: 'Problem-Solving', icon: 'PS', category: 'soft skills' },
+  { name: 'Teamwork', icon: 'TW', category: 'soft skills' },
+  { name: 'Adaptability', icon: 'A', category: 'soft skills' },
 ];
 
 export const timeline = [
   {
     id: 1,
     year: 'Sep 2025',
-    title: 'Software Engineering Virtual Experience',
-    company: 'Electronic Arts (FORAGE)',
-    description: 'Designed C++ OOP class diagrams, documented gameplay features, and optimized legacy code performance.',
+    title: 'Software Engineering Job Simulation',
+    company: 'Electronic Arts (Forage)',
+    description: 'Proposed a College Football gameplay feature, designed class diagrams, wrote OOP-based C++ headers, fixed legacy code bugs, and improved performance with efficient data structures.',
     type: 'work'
   },
   {
     id: 2,
     year: 'Sep 2025',
-    title: 'Solutions Architecture Virtual Experience',
-    company: 'AWS APAC (FORAGE)',
-    description: 'Built scalable AWS hosting architecture with load-balancing strategies and cost optimization.',
+    title: 'Solutions Architecture Job Simulation',
+    company: 'AWS APAC (Forage)',
+    description: 'Designed a scalable, highly available AWS Elastic Beanstalk hosting architecture and explained its cost, trade-offs, and load-balancing strategy.',
     type: 'work'
   },
   {
     id: 3,
     year: 'Aug 2023 - Present',
-    title: 'B.Tech Computer Science & Engineering',
-    company: 'Lovely Professional University, Punjab',
-    description: 'CGPA: 6.2 | Focus on web technologies, cloud computing, and full-stack development.',
+    title: 'Bachelor of Technology - Computer Science and Engineering',
+    company: 'Lovely Professional University, Punjab, India',
+    description: 'CGPA: 6.5',
     type: 'education'
   },
   {
     id: 4,
     year: 'Apr 2022 - Mar 2023',
     title: 'Intermediate',
-    company: 'SS Memorial University, Ranchi',
+    company: 'SS Memorial University, Ranchi, Jharkhand',
     description: 'Percentage: 62%',
+    type: 'education'
+  },
+  {
+    id: 5,
+    year: 'Apr 2020 - Mar 2021',
+    title: 'Matriculation',
+    company: 'Central Academy School, Ranchi, Jharkhand',
+    description: 'Percentage: 67%',
     type: 'education'
   },
 ];
 
+export const certificates = [
+  {
+    title: 'Elite-certified in Cloud Computing',
+    issuer: 'NPTEL, IIT Kharagpur',
+    date: 'Oct 2025'
+  },
+  {
+    title: 'Oracle Cloud Infrastructure 2025 Certified Developer Professional',
+    issuer: 'Oracle',
+    date: 'Sep 2025'
+  },
+];
+
+export const achievements = [
+  'Achieved multi-language proficiency badges on HackerRank (Feb 2026).',
+  'Maintained a consistent LeetCode coding streak with a 77.78% acceptance rate (Feb 2026).',
+  'Solved 175+ LeetCode problems (Jan 2026).',
+];
+
 export const socialLinks = {
-  github:   'https://github.com/Shaan098',
+  github: 'https://github.com/Shaan098',
   linkedin: 'https://linkedin.com/in/shaan-saurav',
-  email:    'shaansaurav633@gmail.com',
-  phone:    '+91 6204566381'
+  email: 'shaansaurav633@gmail.com',
+  phone: '+91 6204566381'
 };
 
 export const projectsData = [
   {
-    id: '1',
-    title: 'Online Multi-Language Compiler',
-    description: 'Full-stack web compiler supporting C, C++, Java, and JavaScript execution with real-time output.',
-    longDescription: 'Engineered a feature-rich online code compiler supporting multiple programming languages. Implemented secure backend with controlled process handling, real-time code editor with syntax highlighting, and dynamic output management. Users can compile and execute code instantly with safe I/O handling.',
-    techStack: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'JWT', 'Code Execution APIs'],
+    id: 'inkwell',
+    title: 'Inkwell - Real-Time Collaborative Editor',
+    description: 'Real-time collaborative text editor with live cursors, presence, offline editing, and automatic reconnection.',
+    longDescription: 'Built a real-time collaborative text editor where several users can edit one document at once. Implemented a custom RGA CRDT so concurrent edits merge identically on every client, with offline editing, resend after reconnect, and a heartbeat that repairs dropped messages. Verified correctness with randomized concurrent-editing tests and a live end-to-end check that replays the same operation log in Python and JavaScript.',
+    techStack: ['React.js', 'Django', 'Django Channels', 'WebSockets', 'CRDT'],
     category: 'fullstack',
-    githubUrl: 'https://github.com/Shaan098/online-compiler',
-    liveUrl: 'https://compiler-client-9wha.vercel.app/',
-    imageUrl: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=400&h=300&fit=crop',
+    imageUrl: 'https://images.unsplash.com/photo-1456324504439-367cee3b3c32?w=800&h=500&fit=crop',
     featured: true,
     order: 1
   },
   {
-    id: '2',
-    title: 'AR Educational Content Viewer',
-    description: 'Interactive AR platform for visualizing and manipulating 3D educational models.',
-    longDescription: 'Created an AR-enabled web platform leveraging React, Node.js, and MongoDB for seamless 3D model interaction. Features include interactive 3D rotation, zooming, AR placement on supported devices, responsive UI with dark mode, and smooth animations for enhanced learning experience.',
-    techStack: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Three.js', 'AR.js'],
+    id: 'sprintdesk',
+    title: 'SprintDesk - Sprint Board & Bug Tracker',
+    description: 'Full-stack sprint planning and bug tracking app with a drag-and-drop Kanban board.',
+    longDescription: 'Built a team sprint planning and bug tracking app where projects, sprints, tasks, and bugs are managed from a drag-and-drop Kanban board. Designed RESTful APIs with JWT authentication and role-based access for admins and developers, enforcing one active sprint per project and one-step ticket status moves. Added ticket assignment, priorities, filters, comments, a sprint progress bar, and Jest unit tests for board workflow rules.',
+    techStack: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'JWT'],
     category: 'fullstack',
-    githubUrl: 'https://github.com/Shaan098/AR-viewver',
-    imageUrl: 'https://imageio.forbes.com/specials-images/imageserve/60fa55b0bb0508f4ac956653/0x0.jpg?format=jpg&height=300&width=400&fit=bounds',
+    imageUrl: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=500&fit=crop',
     featured: true,
     order: 2
   },
   {
-    id: '3',
-    title: 'Client & Patient Appointment System',
-    description: 'Full-stack scheduling platform with JWT auth, role-based access, and appointment tracking.',
-    longDescription: 'Developed a comprehensive appointment scheduling system for efficient booking management. Implemented JWT authentication, role-based authorization (admin/user), responsive dashboard with scheduling controls, real-time availability tracking, and appointment history management.',
-    techStack: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'JWT', 'Tailwind CSS'],
+    id: 'codeforge',
+    title: 'CodeForge - Online Judge Platform',
+    description: 'Online judge platform with secure authentication, code execution, test evaluation, and progress tracking.',
+    longDescription: 'Developed a full-stack online judge platform with secure JWT authentication and a responsive React.js interface. Built RESTful APIs for coding problems, code submissions, hidden test case evaluation, and user progress tracking. Implemented automated code execution and result evaluation with runtime and memory metrics using a modular backend architecture and MongoDB.',
+    techStack: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'REST APIs'],
     category: 'fullstack',
-    githubUrl: 'https://github.com/Shaan098/client-and-patient-appointment',
-    imageUrl: 'https://www.bookingpressplugin.com/wp-content/uploads/2023/12/addons_page.webp',
+    imageUrl: 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=800&h=500&fit=crop',
     featured: true,
     order: 3
   },
 ];
 
 export const stats = [
-  { label: 'Projects Completed', value: '10+', icon: '🚀' },
-  { label: 'LeetCode Problems', value: '150+', icon: '📊' },
-  { label: 'Certifications', value: '2+', icon: '🏆' },
-  { label: 'GitHub Contributions', value: '500+', icon: '📈' },
+  { label: 'Projects', value: '3', icon: '🚀' },
+  { label: 'LeetCode Problems', value: '175+', icon: '📊' },
+  { label: 'Certifications', value: '2', icon: '🏆' },
+  { label: 'LeetCode Acceptance', value: '77.78%', icon: '📈' },
 ];
