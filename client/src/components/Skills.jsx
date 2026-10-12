@@ -1,23 +1,8 @@
 import { skills } from '../data/portfolioData';
 
 export default function Skills() {
-  const categories = ['languages', 'frameworks', 'tools', 'soft skills'];
-  return (
-    <section id="skills" className="neo-section alt">
-      <div className="neo-wrap">
-        <div className="section-intro">
-          <div><span className="paper-label">02 / The toolbox</span><h2 className="section-title mt-5">Things I<br /><span className="hand-underline">know.</span></h2></div>
-          <p>Not a list of buzzwords. These are the tools I have used to make real things, break them, and fix them.</p>
-        </div>
-        <div className="skill-board">
-          {categories.map((category) => (
-            <div className="skill-group" key={category}>
-              <h3>{category}</h3>
-              <div className="skill-list">{skills.filter((skill) => skill.category === category).map((skill) => <span className="skill-chip" key={skill.name}>{skill.name}</span>)}</div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
+  return <section id="skills" className="desk-section desk-skills"><div className="desk-wrap">
+    <div className="desk-section-head"><div><div className="desk-kicker">02 / Stuff I know</div><h2 className="desk-heading">Tools on<br />the <em>table.</em></h2></div><p>These are the languages, frameworks, tools, and habits listed on my CV.</p></div>
+    <div className="desk-skill-list">{skills.map((skill) => <span className="desk-skill" key={skill.name}>{skill.name}</span>)}</div>
+  </div></section>;
 }

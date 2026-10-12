@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="#fff8e7"/>
+  <rect x="48" y="44" width="704" height="410" rx="5" fill="#2b2118"/>
+  <text x="82" y="95" font-family="Georgia,serif" font-size="32" fill="#fff8e7">CodeForge</text>
+  <text x="82" y="124" font-family="Arial,sans-serif" font-size="16" fill="#d99a2b">ONLINE JUDGE / SUBMISSION 018</text>
+  <rect x="82" y="157" width="335" height="230" fill="#fffdf4"/>
+  <path d="M110 202l28 22-28 22M158 246h78M110 298l24 20 24-20M177 318h58" stroke="#2b2118" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="455" y="157" width="245" height="230" fill="#f1d28b"/>
+  <circle cx="505" cy="210" r="17" fill="#d99a2b" stroke="#2b2118" stroke-width="3"/>
+  <path d="M497 210l7 7 13-16" stroke="#2b2118" stroke-width="4" fill="none"/>
+  <text x="535" y="218" font-family="Arial,sans-serif" font-size="20" fill="#2b2118">Accepted</text>
+  <text x="485" y="270" font-family="Arial,sans-serif" font-size="17" fill="#2b2118">runtime 42 ms</text>
+  <text x="485" y="305" font-family="Arial,sans-serif" font-size="17" fill="#2b2118">memory 18 MB</text>
+  <text x="485" y="340" font-family="Arial,sans-serif" font-size="17" fill="#2b2118">tests 12 / 12</text>
+</svg>

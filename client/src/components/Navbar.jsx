@@ -5,34 +5,23 @@ import { socialLinks } from '../data/portfolioData';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
-  const [active, setActive] = useState('hero');
-  const menuItems = [['Home', 'hero'], ['About', 'about'], ['Skills', 'skills'], ['Projects', 'projects'], ['Journey', 'timeline'], ['Contact', 'contact']];
-
+  const [open, setOpen] = useState(false);
+  const links = [['Home', 'hero'], ['Why I do this', 'about'], ['Stuff I know', 'skills'], ['Stuff I made', 'projects'], ['The route here', 'timeline'], ['Say hi', 'contact']];
   useEffect(() => {
-    const onScroll = () => {
-      setScrolled(window.scrollY > 30);
-      menuItems.forEach(([, id]) => {
-        const section = document.getElementById(id);
-        if (section && section.getBoundingClientRect().top <= 120 && section.getBoundingClientRect().bottom > 120) setActive(id);
-      });
-    };
+    const onScroll = () => setScrolled(window.scrollY > 30);
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
-
   return (
-    <nav className={`neo-nav ${scrolled ? 'scrolled' : ''} ${isOpen ? 'mobile-open' : ''}`}>
-      <div className="neo-nav-inner">
-        <a href="#hero" className="neo-logo">Shaan<span>.</span></a>
-        <div className="neo-links">
-          {menuItems.map(([label, id]) => <a key={id} className={active === id ? 'active' : ''} href={`#${id}`} onClick={() => setIsOpen(false)}>{label}</a>)}
+    <nav className={`desk-nav ${scrolled ? 'scrolled' : ''} ${open ? 'mobile-open' : ''}`}>
+      <div className="desk-nav-inner">
+        <a href="#hero" className="desk-logo">Shaan<span>.</span></a>
+        <div className="desk-links">{links.map(([label, id]) => <a key={id} href={`#${id}`} onClick={() => setOpen(false)}>{label}</a>)}</div>
+        <div className="desk-socials">
+          <a className="desk-social" href={socialLinks.github} target="_blank" rel="noreferrer" aria-label="GitHub"><FaGithub size={14} /></a>
+          <a className="desk-social" href={socialLinks.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn"><FaLinkedin size={14} /></a>
         </div>
-        <div className="neo-socials">
-          <a className="neo-social" href={socialLinks.github} target="_blank" rel="noreferrer" aria-label="GitHub"><FaGithub /></a>
-          <a className="neo-social" href={socialLinks.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn"><FaLinkedin /></a>
-        </div>
-        <button className="menu-toggle" onClick={() => setIsOpen(!isOpen)} aria-label="Toggle menu">{isOpen ? <FiX /> : <FiMenu />}</button>
+        <button className="desk-menu" onClick={() => setOpen(!open)} aria-label="Toggle navigation">{open ? <FiX /> : <FiMenu />}</button>
       </div>
     </nav>
   );

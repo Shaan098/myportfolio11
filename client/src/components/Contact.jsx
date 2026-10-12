@@ -5,32 +5,12 @@ import { sendContactMessage } from '../utils/api';
 import { socialLinks } from '../data/portfolioData';
 
 export default function Contact() {
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [data, setData] = useState({ name: '', email: '', message: '' });
   const [loading, setLoading] = useState(false);
   const submit = async (event) => {
     event.preventDefault();
-    if (!Object.values(formData).every(Boolean)) return toast.error('Please fill in every field.');
-    try { setLoading(true); await sendContactMessage(formData); toast.success('Message sent. Thank you.'); setFormData({ name: '', email: '', message: '' }); }
-    catch { toast.error('Could not send that. Please email me instead.'); }
-    finally { setLoading(false); }
+    if (!Object.values(data).every(Boolean)) return toast.error('Please fill in every field.');
+    try { setLoading(true); await sendContactMessage(data); toast.success('Message sent. Thank you.'); setData({ name: '', email: '', message: '' }); } catch { toast.error('That did not send. Please email me instead.'); } finally { setLoading(false); }
   };
-  return (
-    <section id="contact" className="neo-section" style={{ background: 'var(--mustard)' }}>
-      <div className="neo-wrap">
-        <div className="contact-neo">
-          <div><span className="paper-label">05 / Say hello</span><h2 className="section-title mt-5">Have a<br /><span className="hand-underline">thought?</span></h2><div className="contact-details">
-            <a className="contact-detail" href={`mailto:${socialLinks.email}`}><FaEnvelope /> {socialLinks.email}</a>
-            <a className="contact-detail" href={`tel:${socialLinks.phone}`}><FaPhone /> {socialLinks.phone}</a>
-            <div className="contact-detail"><FaMapMarkerAlt /> Punjab, India</div>
-          </div></div>
-          <form className="neo-form" onSubmit={submit}>
-            <label htmlFor="name">Your name</label><input id="name" className="neo-input" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} />
-            <label htmlFor="email">Email address</label><input id="email" type="email" className="neo-input" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} />
-            <label htmlFor="message">What are you thinking?</label><textarea id="message" rows="5" className="neo-input" value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} />
-            <button className="ink-button" disabled={loading}>{loading ? 'Sending...' : 'Send it my way →'}</button>
-          </form>
-        </div>
-      </div>
-    </section>
-  );
+  return <section id="contact" className="desk-section desk-contact"><div className="desk-wrap desk-contact-grid"><div><div className="desk-kicker">05 / Say hi</div><h2 className="desk-heading">Tell me<br />what you are <em>making.</em></h2><div className="desk-contact-links"><a href={`mailto:${socialLinks.email}`}><FaEnvelope /> {socialLinks.email}</a><a href={`tel:${socialLinks.phone}`}><FaPhone /> {socialLinks.phone}</a></div></div><form className="desk-form" onSubmit={submit}><label htmlFor="name">Your name</label><input id="name" className="desk-input" value={data.name} onChange={(event) => setData({ ...data, name: event.target.value })} /><label htmlFor="email">Email</label><input id="email" type="email" className="desk-input" value={data.email} onChange={(event) => setData({ ...data, email: event.target.value })} /><label htmlFor="message">Message</label><textarea id="message" rows="5" className="desk-input" value={data.message} onChange={(event) => setData({ ...data, message: event.target.value })} /><button className="desk-button" disabled={loading}>{loading ? 'Sending...' : 'Send message'}</button></form></div></section>;
 }

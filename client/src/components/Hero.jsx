@@ -1,54 +1,44 @@
-import { useEffect, useRef, useState } from 'react';
-import { motion } from 'framer-motion';
+import { useState } from 'react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { motion } from 'framer-motion';
 import { socialLinks } from '../data/portfolioData';
 import ResumeButtons from './ResumeButtons';
 
+const notes = [
+  { className: 'note-one', title: 'Right now', text: 'B.Tech Computer Science student at Lovely Professional University. CGPA: 6.5.' },
+  { className: 'note-two', title: 'I make', text: 'Collaborative editors, sprint boards, and online judge platforms.' },
+  { className: 'note-three', title: 'Good to know', text: 'I solved 175+ LeetCode problems and keep learning by building.' },
+];
+
 export default function Hero() {
-  const cubeRef = useRef(null);
-  const [currentRole, setCurrentRole] = useState(0);
-  const roles = ['Full Stack Developer', 'React.js Developer', 'Backend Developer', 'Problem Solver'];
-
-  useEffect(() => {
-    const interval = setInterval(() => setCurrentRole((role) => (role + 1) % roles.length), 2800);
-    return () => clearInterval(interval);
-  }, []);
-
-  const handleMove = (event) => {
-    if (!cubeRef.current) return;
-    const x = (event.clientX / window.innerWidth - 0.5) * 26;
-    const y = (event.clientY / window.innerHeight - 0.5) * -26;
-    cubeRef.current.style.transform = `rotateX(${y - 14}deg) rotateY(${x - 24}deg) rotateZ(-3deg)`;
+  const [positions, setPositions] = useState({});
+  const [dragging, setDragging] = useState(null);
+  const move = (event, note) => {
+    if (!dragging || dragging !== note.className) return;
+    setPositions((current) => ({ ...current, [note.className]: { x: event.clientX - 110, y: event.clientY - 40 } }));
   };
-
   return (
-    <motion.section id="hero" className="hero-neo" onMouseMove={handleMove} initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-      <div className="parallax-shape" style={{ width: 90, height: 90, right: '10%', top: '18%', background: 'var(--mustard)', transform: 'rotate(14deg)' }} />
-      <div className="parallax-shape" style={{ width: 35, height: 35, left: '8%', bottom: '19%', background: 'var(--brick)', transform: 'rotate(-18deg)' }} />
-      <div className="hero-sticker">AVAILABLE FOR GOOD WORK</div>
-      <div className="hero-grid">
+    <motion.section id="hero" className="desk-section desk-hero" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+      <div className="desk-wrap desk-hero-grid">
         <div>
-          <p className="hero-kicker">01 / Hello, I&apos;m Shaan Saurav</p>
-          <h1 className="hero-title">I build <em>useful</em> things for the web.</h1>
-          <p className="hero-copy">
-            {roles[currentRole]} who likes clear interfaces, sturdy backends, and solving the awkward parts of a product.
-          </p>
-          <div className="hero-actions"><ResumeButtons /></div>
-          <div className="hero-links">
-            <a href={socialLinks.github} target="_blank" rel="noreferrer"><FaGithub /> GitHub</a>
-            <a href={socialLinks.linkedin} target="_blank" rel="noreferrer"><FaLinkedin /> LinkedIn</a>
+          <div className="desk-kicker">A small portfolio / Shaan Saurav</div>
+          <h1 className="desk-heading">I make websites that <em>do a job.</em></h1>
+          <div className="desk-rule" />
+          <p className="desk-copy">I am a full-stack developer. I work with React, Node.js, Django, Express.js, and MongoDB. This is a short tour of what I have made and what I am learning.</p>
+          <div className="desk-hero-actions"><ResumeButtons /></div>
+          <div className="flex gap-4 mt-5">
+            <a href={socialLinks.github} target="_blank" rel="noreferrer" aria-label="GitHub"><FaGithub /></a>
+            <a href={socialLinks.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn"><FaLinkedin /></a>
           </div>
         </div>
-        <div className="hero-stage">
-          <div className="cube-shadow" />
-          <div className="code-cube" ref={cubeRef} aria-label="Interactive 3D code cube">
-            <div className="cube-face cube-front">&lt;/&gt;</div>
-            <div className="cube-face cube-back">{'{ }'}</div>
-            <div className="cube-face cube-right">JS</div>
-            <div className="cube-face cube-left">PY</div>
-            <div className="cube-face cube-top">C++</div>
-            <div className="cube-face cube-bottom">API</div>
-          </div>
+        <div className="desk-note-board" onPointerMove={(event) => dragging && move(event, notes.find((note) => note.className === dragging))} onPointerUp={() => setDragging(null)} onPointerLeave={() => setDragging(null)}>
+          <div className="desk-tape" />
+          {notes.map((note) => {
+            const position = positions[note.className];
+            return <article key={note.className} className={`pin-note ${note.className}`} onPointerDown={(event) => { event.currentTarget.setPointerCapture(event.pointerId); setDragging(note.className); }} style={position ? { left: position.x, top: position.y, transform: 'rotate(0deg)' } : undefined}>
+              <h3>{note.title}</h3><p>{note.text}</p>
+            </article>;
+          })}
         </div>
       </div>
     </motion.section>

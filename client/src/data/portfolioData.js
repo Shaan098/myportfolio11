@@ -44,7 +44,7 @@ export const timeline = [
     id: 3,
     year: 'Aug 2023 - Present',
     title: 'Bachelor of Technology - Computer Science and Engineering',
-    company: 'Lovely Professional University, Punjab, India',
+    company: 'Lovely Professional University, India',
     description: 'CGPA: 6.5',
     type: 'education'
   },
@@ -100,7 +100,7 @@ export const projectsData = [
     longDescription: 'Built a real-time collaborative text editor where several users can edit one document at once. Implemented a custom RGA CRDT so concurrent edits merge identically on every client, with offline editing, resend after reconnect, and a heartbeat that repairs dropped messages. Verified correctness with randomized concurrent-editing tests and a live end-to-end check that replays the same operation log in Python and JavaScript.',
     techStack: ['React.js', 'Django', 'Django Channels', 'WebSockets', 'CRDT'],
     category: 'fullstack',
-    imageUrl: 'https://images.unsplash.com/photo-1456324504439-367cee3b3c32?w=800&h=500&fit=crop',
+    imageUrl: '/project-inkwell.svg',
     featured: true,
     order: 1
   },
@@ -111,7 +111,7 @@ export const projectsData = [
     longDescription: 'Built a team sprint planning and bug tracking app where projects, sprints, tasks, and bugs are managed from a drag-and-drop Kanban board. Designed RESTful APIs with JWT authentication and role-based access for admins and developers, enforcing one active sprint per project and one-step ticket status moves. Added ticket assignment, priorities, filters, comments, a sprint progress bar, and Jest unit tests for board workflow rules.',
     techStack: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'JWT'],
     category: 'fullstack',
-    imageUrl: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=500&fit=crop',
+    imageUrl: '/project-sprintdesk.svg',
     featured: true,
     order: 2
   },
@@ -122,7 +122,7 @@ export const projectsData = [
     longDescription: 'Developed a full-stack online judge platform with secure JWT authentication and a responsive React.js interface. Built RESTful APIs for coding problems, code submissions, hidden test case evaluation, and user progress tracking. Implemented automated code execution and result evaluation with runtime and memory metrics using a modular backend architecture and MongoDB.',
     techStack: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'REST APIs'],
     category: 'fullstack',
-    imageUrl: 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=800&h=500&fit=crop',
+    imageUrl: '/project-codeforge.svg',
     featured: true,
     order: 3
   },
