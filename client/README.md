@@ -1,6 +1,6 @@
-# 🎨 MERN Portfolio - Client (React + Vite)
+# 🎨 Shaan Saurav Portfolio - Client (React + Vite)
 
-A modern, animated React frontend for a personal portfolio website with stunning visual effects and smooth interactions.
+A modern, animated React frontend for Shaan Saurav's CV-aligned portfolio, with project, skills, education, certificate, and achievement sections.
 
 ## 📋 Features
 

@@ -6,7 +6,7 @@ import ProjectCard from './ProjectCard';
 import ProjectModal from './ProjectModal';
 
 export default function Projects() {
-  const [projects, setProjects] = useState(projectsData);
+  const projects = projectsData;
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedProject, setSelectedProject] = useState(null);
 
